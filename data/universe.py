@@ -252,6 +252,10 @@ LIST_1 = [
 ]
 
 LIST_2 = [
+    {"Ticker": "^STOXX50E"},
+    {"Ticker": "^GDAXI"},
+    {"Ticker": "^FCHI"},
+    {"Ticker": "FTSEMIB.MI"},
     {"Ticker": "^VIX"},
     {"Ticker": "EURUSD=X"},
     {"Ticker": "GC=F"},

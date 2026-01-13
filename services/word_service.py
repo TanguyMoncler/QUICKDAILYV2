@@ -45,18 +45,26 @@ class WordService:
                 continue
 
             found = True
+            
+            # Find the position of the placeholder
+            placeholder_pos = full_text.find(placeholder)
+            before = full_text[:placeholder_pos]
+            after = full_text[placeholder_pos + len(placeholder):]
+            
+            # Clear paragraph and set alignment
             paragraph.clear()
             paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
-            before, after = full_text.split(placeholder, 1)
-
+            # Add text before placeholder
             if before:
                 run_before = paragraph.add_run(before)
                 self._apply_style(run_before)
 
+            # Add replacement text
             run_value = paragraph.add_run(text)
             self._apply_style(run_value, color)
 
+            # Add text after placeholder
             if after:
                 run_after = paragraph.add_run(after)
                 self._apply_style(run_after)
@@ -125,30 +133,35 @@ class WordService:
     # --------------------------------------------------
 
     def fill_table_2(self, data):
-        self._fill_market_tables(data, start_index=1)
+        self._fill_market_tables(data, table_num=2, start_mvt_index=1)
 
     def fill_table_3(self, data):
-        self._fill_market_tables(data, start_index=10)
+        self._fill_market_tables(data, table_num=3, start_mvt_index=10)
 
-    def _fill_market_tables(self, data, start_index):
+    def _fill_market_tables(self, data, table_num, start_mvt_index):
         for i, row in enumerate(data):
+            # Fill price placeholder: T2_1, T2_2, ... or T3_1, T3_2, ...
+            price_placeholder = f"{{{{T{table_num}_{i+1}}}}}"
             self._replace_placeholder(
-                f"{{{{^{row['ticker']}}}}}",
+                price_placeholder,
                 f"{row['close']:,.2f}".replace(",", " ")
             )
 
-            idx = start_index + i
+            # Fill variation placeholder: MVT1, MVT2, ... or MVT10, MVT11, ...
+            mvt_index = start_mvt_index + i
+            mvt_placeholder = f"{{{{MVT{mvt_index}}}}}"
+            
             if row["variation"] is None:
-                self._replace_placeholder(f"{{{{MVT{idx}}}}}", "-")
+                self._replace_placeholder(mvt_placeholder, "-")
             elif row["variation"] > 0:
                 self._replace_placeholder(
-                    f"{{{{MVT{idx}}}}}",
+                    mvt_placeholder,
                     f'+{row["variation"]*100:.2f}%',
                     COLOR_GREEN
                 )
             else:
                 self._replace_placeholder(
-                    f"{{{{MVT{idx}}}}}",
+                    mvt_placeholder,
                     f'{row["variation"]*100:.2f}%',
                     COLOR_RED
                 )
