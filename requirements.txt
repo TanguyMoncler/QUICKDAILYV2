@@ -1,5 +1,4 @@
 yfinance
 python-docx
 pandas
-requests
-beautifulsoup4
+numpy

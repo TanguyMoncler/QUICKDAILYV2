@@ -1,4 +1,4 @@
-CUSTOM_LIST = [
+LIST_1 = [
     {"Ticker": "74SW.PA", "Name": "74Software"},
     {"Ticker": "AB.PA", "Name": "AB Science"},
     {"Ticker": "ABCA.PA", "Name": "ABC Arbitrage"},
@@ -260,4 +260,30 @@ CUSTOM_LIST = [
     {"Ticker": "TNG.PA", "Name": "Transgene"},
     {"Ticker": "VIL.PA", "Name": "Viel & Cie"}
 
+]
+
+LIST_2 = [
+    {"Ticker": "^VIX"},
+    {"Ticker": "EURUSD=X"},
+    {"Ticker": "GC=F"},
+    {"Ticker": "CL=F"},
+    {"Ticker": "BTC-EUR"},
+]
+
+LIST_3 = [
+    {"Ticker":"SXAE.Z"},
+    {"Ticker":"SX7E.Z"},
+    {"Ticker":"SXPE.Z"},
+    {"Ticker":"SX4E.Z"},
+    {"Ticker":"SX3E.Z"},
+    {"Ticker":"SXDE.Z"},
+    {"Ticker":"SXNE.Z"},
+    {"Ticker":"SXIE.Z"},
+    {"Ticker":"SXME.Z"},
+    {"Ticker":"SXEE.Z"},
+    {"Ticker":"SXOE.Z"},
+    {"Ticker":"SX8E.Z"},
+    {"Ticker":"SXKE.Z"},
+    {"Ticker":"SXTE.Z"},
+    {"Ticker":"SX6E.Z"},
 ]
