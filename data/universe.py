@@ -10,17 +10,14 @@ LIST_1 = [
     {"Ticker": "AFME.PA", "Name": "Affluent Medical SA"},
     {"Ticker": "AGP.MI", "Name": "Altea"},
     {"Ticker": "AKW.PA", "Name": "Akwel"},
-    {"Ticker": "ALA.MI", "Name": "ALA"},
     {"Ticker": "ALAMA.PA", "Name": "AMA"},
     {"Ticker": "ALATI.PA", "Name": "ACTIA"},
     {"Ticker": "ALBFR.PA", "Name": "Sidetrade SA"},
-    {"Ticker": "ALBIZ.PA", "Name": "Obiz"},
-    {"Ticker": "ALBLD.PA", "Name": "Bilendi"},
+    {"Ticker": "ALBIZ.PA", "Name": "Obiz"},  
     {"Ticker": "ALBPK.PA", "Name": "Broadpeak"},
     {"Ticker": "ALCAT.PA", "Name": "Catana Group"},
     {"Ticker": "ALCUR.PA", "Name": "Arcure"},
     {"Ticker": "ALDLT.PA", "Name": "Delta Plus"},
-    {"Ticker": "ALDNE.PA", "Name": "Dont Nod Ent."},
     {"Ticker": "ALDVI.PA", "Name": "Advicienne"},
     {"Ticker": "ALERS.PA", "Name": "Eurobio Scientific"},
     {"Ticker": "ALESE.PA", "Name": "Entech"},
@@ -35,7 +32,6 @@ LIST_1 = [
     {"Ticker": "ALICA.PA", "Name": "ICAPE Holding"},
     {"Ticker": "ALINV.PA", "Name": "Invibes Advertising"},
     {"Ticker": "ALKLK.PA", "Name": "Kerlink"},
-    {"Ticker": "ALLDL.PA", "Name": "Groupe LDLC"},
     {"Ticker": "ALLEC.PA", "Name": "Cogelec"},
     {"Ticker": "ALLGO.PA", "Name": "Largo"},
     {"Ticker": "ALLIX.PA", "Name": "Wallix Group"},
@@ -61,9 +57,7 @@ LIST_1 = [
     {"Ticker": "ALVAP.PA", "Name": "Kumulus Vape"},
     {"Ticker": "ALVDM.PA", "Name": "Voyageurs du Monde"},
     {"Ticker": "ALVU.PA", "Name": "Vente-Unique.com"},
-    {"Ticker": "ALWTR.PA", "Name": "Osmosun"},
     {"Ticker": "APAM.AS", "Name": "APERAM"},
-    {"Ticker": "ARAMI.PA", "Name": "Aramis Group"},
     {"Ticker": "ARG.PA", "Name": "ARGAN"},
     {"Ticker": "ARVEN.PA", "Name": "Arverne"},
     {"Ticker": "ASY.PA", "Name": "Assystem"},
@@ -79,7 +73,6 @@ LIST_1 = [
     {"Ticker": "BIG.PA", "Name": "Bigben Interactive"},
     {"Ticker": "BIM.PA", "Name": "Biomérieux"},
     {"Ticker": "BLC.PA", "Name": "Bastide le Confort Med."},
-    {"Ticker": "BOI.PA", "Name": "Boiron"},
     {"Ticker": "BOL.PA", "Name": "Bolloré"},
     {"Ticker": "BON.PA", "Name": "Bonduelle"},
     {"Ticker": "BSD.PA", "Name": "Bourse Direct"},
@@ -88,7 +81,6 @@ LIST_1 = [
     {"Ticker": "CDG.MI", "Name": "Casta Diva"},
     {"Ticker": "CEN.PA", "Name": "Groupe CRIT"},
     {"Ticker": "CFL.MI", "Name": "Cofle"},
-    {"Ticker": "CGM.PA", "Name": "Cegedim"},
     {"Ticker": "CLA.PA", "Name": "Claranova"},
     {"Ticker": "CLARI.PA", "Name": "Clariane"},
     {"Ticker": "CO.PA", "Name": "Casino Guichard-Perrachon"},
@@ -135,7 +127,6 @@ LIST_1 = [
     {"Ticker": "GNFT.PA", "Name": "Genfit"},
     {"Ticker": "GPE.PA", "Name": "GPE Groupe Pizzorno"},
     {"Ticker": "GPI.MI", "Name": "GPI"},
-    {"Ticker": "GRVO.PA", "Name": "Graines Voltz"},
     {"Ticker": "GUI.PA", "Name": "Guillemot"},
     {"Ticker": "HCO.PA", "Name": "HighCo"},
     {"Ticker": "HDF.PA", "Name": "Hydrogène de France"},
@@ -190,7 +181,6 @@ LIST_1 = [
     {"Ticker": "PARRO.PA", "Name": "Parrot"},
     {"Ticker": "PEUG.PA", "Name": "Peugeot Invest"},
     {"Ticker": "PHN.MI", "Name": "Pharmanutra"},
-    {"Ticker": "PHXM.PA", "Name": "PHAXIAM Therapeutics"},
     {"Ticker": "PIG.PA", "Name": "Haulotte Group"},
     {"Ticker": "PLNW.PA", "Name": "Planisware"},
     {"Ticker": "PLX.PA", "Name": "Pluxee"},
@@ -249,7 +239,6 @@ LIST_1 = [
     {"Ticker": "WIIT.MI", "Name": "WIIT"},
     {"Ticker": "WLN.PA", "Name": "Worldline"},
     {"Ticker": "XFAB.PA", "Name": "X-Fab Silicon"},
-    {"Ticker": "XIL.PA", "Name": "Xilam Animation"},
     {"Ticker": "ABEO.PA", "Name": "Abéo"},
     {"Ticker": "AELIS.PA", "Name": "Aelis Farma"},
     {"Ticker": "ANTIN.PA", "Name": "Antin Infrastructure Partners"},
@@ -286,4 +275,12 @@ LIST_3 = [
     {"Ticker":"SXKE.Z"},
     {"Ticker":"SXTE.Z"},
     {"Ticker":"SX6E.Z"},
+]
+
+GARBAGE_TICKERS = [
+
+
+
+
+
 ]
