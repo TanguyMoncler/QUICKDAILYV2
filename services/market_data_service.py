@@ -1,6 +1,7 @@
 import yfinance as yf
 import pandas as pd
 import warnings
+from datetime import datetime
 
 class MarketDataService:
 
@@ -17,6 +18,30 @@ class MarketDataService:
             return None
         return data.iloc[-2], data.iloc[-1]
 
+    def _get_intraday_and_avg_volume(self, ticker):
+        """Get today's intraday volume sum and 10-day average volume"""
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            # Get 1-minute intraday data for today
+            intraday = yf.download(ticker, period="1d", interval="1m", progress=False)
+            
+            # Get last 10 days of daily data for average volume
+            daily = yf.download(ticker, period="11d", interval="1d", progress=False)
+        
+        if intraday is None or len(intraday) == 0:
+            return None, None
+        
+        if daily is None or len(daily) < 10:
+            return None, None
+        
+        # Sum today's intraday volume
+        today_volume = intraday["Volume"].sum().item()
+        
+        # Calculate average volume for the last 10 trading days (excluding today)
+        avg_volume_10d = daily.iloc[:-1]["Volume"].tail(10).mean().item()
+        
+        return today_volume, avg_volume_10d
+
     def compute_table_1(self, universe):
         rows = []
 
@@ -29,16 +54,23 @@ class MarketDataService:
             # Convert Series to scalars
             close_curr = float(curr["Close"].item() if hasattr(curr["Close"], 'item') else curr["Close"])
             close_prev = float(prev["Close"].item() if hasattr(prev["Close"], 'item') else prev["Close"])
-            volume = float(curr["Volume"].item() if hasattr(curr["Volume"], 'item') else curr["Volume"])
             
             variation = (close_curr - close_prev) / close_prev
             multiple = close_curr / close_prev
+            
+            # Get intraday volume and 10-day average
+            today_volume, avg_volume_10d = self._get_intraday_and_avg_volume(item["Ticker"])
+            
+            if today_volume is None or avg_volume_10d is None:
+                volume_multiple = 1.0
+            else:
+                volume_multiple = today_volume / avg_volume_10d if avg_volume_10d > 0 else 1.0
 
             rows.append({
                 "name": item["Name"],
                 "variation": variation,
                 "multiple": multiple,
-                "volume": volume
+                "volume_multiple": volume_multiple
             })
 
         if not rows:
@@ -51,7 +83,7 @@ class MarketDataService:
         df = pd.DataFrame(rows)
         df = df.reset_index(drop=True)
 
-        most_active = df.nlargest(5, "volume")
+        most_active = df.nlargest(5, "volume_multiple")
         best = df.nlargest(5, "variation")
         worst = df.nsmallest(5, "variation")
 

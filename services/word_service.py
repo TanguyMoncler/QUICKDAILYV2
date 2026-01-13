@@ -33,6 +33,7 @@ class WordService:
     def _apply_style(self, run, color=None):
         run.font.name = FONT_NAME
         run.font.size = FONT_SIZE
+        run.font.bold = False
         if color:
             run.font.color.rgb = color
 
@@ -88,8 +89,8 @@ class WordService:
                 )
 
                 self._replace_placeholder(
-                    f"{{{{MULTIPLE {i+1}}}}}",
-                    f'{data["most_active"].iloc[i]["multiple"]:.2f}x',
+                    f"{{{{MAS MULTIPLE {i+1}}}}}",
+                    f'{data["most_active"].iloc[i]["volume_multiple"]:.2f}x',
                     COLOR_BLUE
                 )
 
@@ -132,7 +133,7 @@ class WordService:
     def _fill_market_tables(self, data, start_index):
         for i, row in enumerate(data):
             self._replace_placeholder(
-                f"{{{{{row['ticker']}}}}}",
+                f"{{{{^{row['ticker']}}}}}",
                 f"{row['close']:,.2f}".replace(",", " ")
             )
 

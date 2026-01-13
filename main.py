@@ -36,6 +36,8 @@ def main():
             print(f"  - {ticker}")
     else:
         print("\n✓ All tickers loaded successfully")
+    
+    print("\nDONE !")
 
 if __name__ == "__main__":
     main()
