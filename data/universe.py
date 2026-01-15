@@ -247,8 +247,18 @@ LIST_1 = [
     {"Ticker": "NAE.PA",  "Name": "North Atlantic Energies"},
     {"Ticker": "RF.PA",   "Name": "Eurazeo"},
     {"Ticker": "TNG.PA", "Name": "Transgene"},
-    {"Ticker": "VIL.PA", "Name": "Viel & Cie"}
-
+    {"Ticker": "VIL.PA", "Name": "Viel & Cie"},
+    {"Ticker": "ALA.MI", "Name": "ALA"},
+    {"Ticker": "ALBLD.PA", "Name": "Bilendi"},
+    {"Ticker": "ALDNE.PA", "Name": "Dont Nod Ent."},
+    {"Ticker": "ALLDL.PA", "Name": "Groupe LDLC"},
+    {"Ticker": "ALWTR.PA", "Name": "Osmosun"},
+    {"Ticker": "ARAMI.PA", "Name": "Aramis Group"},
+    {"Ticker": "BOI.PA", "Name": "Boiron"},
+    {"Ticker": "CGM.PA", "Name": "Cegedim"},
+    {"Ticker": "GRVO.PA", "Name": "Graines Voltz"},
+    {"Ticker": "PHXM.PA", "Name": "PHAXIAM Therapeutics"},
+    {"Ticker": "XIL.PA", "Name": "Xilam Animation"},
 ]
 
 LIST_2 = [
@@ -282,9 +292,15 @@ LIST_3 = [
 ]
 
 GARBAGE_TICKERS = [
-
-
-
-
-
+{"Ticker": "ALA.MI", "Name": "ALA"},
+{"Ticker": "ALBLD.PA", "Name": "Bilendi"},
+{"Ticker": "ALDNE.PA", "Name": "Dont Nod Ent."},
+{"Ticker": "ALLDL.PA", "Name": "Groupe LDLC"},
+{"Ticker": "ALWTR.PA", "Name": "Osmosun"},
+{"Ticker": "ARAMI.PA", "Name": "Aramis Group"},
+{"Ticker": "BOI.PA", "Name": "Boiron"},
+{"Ticker": "CGM.PA", "Name": "Cegedim"},
+{"Ticker": "GRVO.PA", "Name": "Graines Voltz"},
+{"Ticker": "PHXM.PA", "Name": "PHAXIAM Therapeutics"},
+{"Ticker": "XIL.PA", "Name": "Xilam Animation"},
 ]

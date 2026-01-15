@@ -144,7 +144,7 @@ class WordService:
             price_placeholder = f"{{{{T{table_num}_{i+1}}}}}"
             self._replace_placeholder(
                 price_placeholder,
-                f"{row['close']:,.2f}".replace(",", " ")
+                f"€ {row['close']:,.2f}".replace(",", " ")
             )
 
             # Fill variation placeholder: MVT1, MVT2, ... or MVT10, MVT11, ...
